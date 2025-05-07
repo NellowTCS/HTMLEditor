@@ -98,8 +98,8 @@ A web-based, drag-and-drop HTML editor for creating and prototyping web layouts 
 <a href="http://interactjs.io" style="display: block; text-align: left;"><img alt="interact.js" src="https://c4d6f7d727e094887e93-4ea74b676357550bd514a6a5b344c625.ssl.cf2.rackcdn.com/ijs-solid.svg" height="70px" width="100%"></a>
 - [Interact.js](https://interactjs.io/) - Drag-and-drop and resizing functionality </br>
 
-
-<a href="https://highlightjs.org" style="display: block; text-align: left;"><img alt="highlight.js" src="https://github.com/highlightjs/highlightjs.org/raw/d142d7eba85c3725548287bf5088d59cedf66bdb/public/icon.png" height="70px"></a> - [Highlight.js](https://highlightjs.org/) - Syntax highlighting for code editors
+<a href="https://highlightjs.org" style="display: block; text-align: center;"><img alt="highlight.js" src="https://github.com/highlightjs/highlightjs.org/raw/d142d7eba85c3725548287bf5088d59cedf66bdb/public/icon.png" height="70px"></a>
+ - [Highlight.js](https://highlightjs.org/) - Syntax highlighting for code editors
 
 
 - No server-side dependencies; runs entirely in the browser
