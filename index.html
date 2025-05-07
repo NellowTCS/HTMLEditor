@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HTMLEditor</title>
+  <link rel="manifest" href="manifest.json">
   <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
@@ -544,6 +545,7 @@
   <div class="toolbar">
     <h1>HTMLEditor</h1>
     <div class="toolbar-actions">
+      <button id="install-button" hidden>Install App</button>
       <button id="undoBtn" title="Undo (Ctrl+Z)">Undo</button>
       <button id="redoBtn" title="Redo (Ctrl+Y)">Redo</button>
       <button id="saveBtn" title="Save Project">Save</button>
@@ -724,6 +726,45 @@
       </tr>
     </table>
   </div>
+  <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          // Register the service worker
+          if ("serviceWorker" in navigator) {
+              navigator.serviceWorker.register("service-worker.js");
+          }
+  
+          let deferredPrompt;
+          const installButton = document.getElementById("install-button");
+  
+          // Listen for the install prompt
+          window.addEventListener("beforeinstallprompt", (e) => {
+              e.preventDefault();
+              deferredPrompt = e;
+              installButton.hidden = false;
+          });
+  
+          // Handle install button click
+          installButton.addEventListener("click", async () => {
+              const isStandalone = window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone;
+  
+              if (isStandalone) {
+                  console.log("App is already installed");
+                  return;
+              }
+  
+              if (deferredPrompt) {
+                  deferredPrompt.prompt();
+                  const { outcome } = await deferredPrompt.userChoice;
+                  deferredPrompt = null;
+                  console.log(outcome === "accepted" ? "User accepted install prompt" : "User dismissed install prompt");
+              } else {
+                  if (window.matchMedia("(display-mode: browser)").matches) {
+                      window.location.assign("chrome://apps/");
+                  }
+              }
+          });
+      });
+  </script>
   
   <script>
     // Main state
