@@ -1,7 +1,7 @@
 {
   "name": "HTMLEditor",
   "short_name": "HTMLEditor",
-  "start_url": "/", 
+  "start_url": "/HTMLEditor", 
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
