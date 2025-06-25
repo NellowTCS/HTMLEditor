@@ -1,15 +1,19 @@
-# HTMLEditor
-
-
-
-
-
+# HTMLEditor  
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 HTMLEditor has a new home!
 (Don't worry, it wasn't sold or anything)
 https://github.com/HTMLToolkit/HTMLEditor
-
-
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 A web-based, drag-and-drop HTML editor for creating and prototyping web layouts with real-time preview, code editing, and dark mode support. Built with HTML, CSS, JavaScript, and powered by libraries like Interact.js and Highlight.js.
 
